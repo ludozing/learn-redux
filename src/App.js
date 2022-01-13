@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="App">
       <CounterContainer />
+      <hr />
       <TodosContainer />
     </div>
   );

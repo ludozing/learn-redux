@@ -13,9 +13,6 @@ const Todos = ({todos, onCreate, onToggle}) => {
         onCreate(text);
         setText('');
     }
-    const onClick = (e) => {
-        onToggle(parseInt(e.target.id));
-    }
     return (
         <div>
             <h1>Todolist</h1>
@@ -27,7 +24,7 @@ const Todos = ({todos, onCreate, onToggle}) => {
                 <ul>
                     {
                         todos.map(todo =>
-                            <li style={{textDecoration: todo.done? 'line-through':'none'}} key={todo.id} id={todo.id} onClick={onClick}>
+                            <li style={{textDecoration: todo.done? 'line-through':'none'}} key={todo.id} id={todo.id} onClick={() => onToggle(todo.id)}>
                                 {todo.text}
                             </li>)
                     }
